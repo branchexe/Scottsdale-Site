@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <title>Scottsdale, Arizona Wiki</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="home-button">Home</a>
+        <div class="nav-container">
+            <a href="#">Contact</a>
+            <a href="#">Maps</a>
+            <a href="#">Gallery</a>
+        </div>
+    </div>
+
+    <nav>
+        <center>
+        <h2>Contents</h2>
+        <ul>
+          <li><a href="#history">History</a></li>
+          <li><a href="#attractions">Attractions</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#gettingaround">Getting Around</a></li>
+        </ul>
+    </center>
+      </nav>
+      
+    <h1 class="welcome">Welcome to the Scottsdale, Arizona Wiki</h1>
+    <p>Scottsdale is a city located in the Sonoran Desert of Arizona, known for its beautiful desert landscapes, luxury resorts, and vibrant arts scene. With over 200 art galleries, numerous golf courses, and a thriving restaurant and nightlife scene, there is always something to do in Scottsdale.</p>
+    <h2 id="history">History</h2>
+    <p>The city of Scottsdale was founded in 1888 by U.S. Army Chaplain Winfield Scott, who purchased 640 acres of land in the area. In the following decades, Scottsdale grew into a popular destination for tourists, with the construction of several resorts and the establishment of the Scottsdale Art District.</p>
+    <h2 id="attractions">Attractions</h2>
+    <p>There are many attractions to check out in Scottsdale, including:</p>
+    <ul>
+        <li>Old Town Scottsdale: This historic district is home to a variety of restaurants, bars, and shops, as well as the Scottsdale Museum of Contemporary Art.</li>
+        <li>Desert Botanical Garden: This 140-acre garden is home to over 50,000 plants, including cacti, succulents, and other desert plants.</li>
+        <li>Scottsdale Fashion Square: This luxury shopping mall is home to over 250 stores, including high-end brands such as Neiman Marcus and Saks Fifth Avenue.</li>
+        <li>Scottsdale Stadium: This is the spring training home of the San Francisco Giants baseball team, and also hosts concerts and other events throughout the year.</li>
+    </ul>
+    <h2 id="events">Events</h2>
+    <p>There are many events held in Scottsdale throughout the year, including:</p>
+    <ul>
+        <li>Scottsdale Arts Festival: This annual event, held in March, features the work of over 200 artists, as well as live music and food vendors.</li>
+        <li>Scottsdale International Film Festival: This film festival, held in October, showcases a variety of independent and international films.</li>
+        <li>Scottsdale Arabian Horse Show: This event, held in February, is the largest Arabian horse show in the world, with over 2,500 horses on display.</li>
+    </ul>
+    <h2 id="gettingaround">Getting Around</h2>
+    <p>Scottsdale is served by the Valley Metro public transportation system, which includes buses and the light rail. There are also several ride-sharing services, such as Uber and Lyft, available in the city.</p>
+
+    <h2>Demographics</h2>
+    <p>As of the 2010 Census, the population of Scottsdale was 217,385. The city has a diverse population, with a mix of young professionals, families, and retirees. The median age of residents is 45, and the median household income is $75,325. The city is also home to a large number of seasonal residents, who come to escape the cold weather in other parts of the country.</p>
+
+    <h2>Climate</h2>
+    <p>Scottsdale has a hot desert climate, with hot, dry summers and mild winters. Average high temperatures range from the mid-60s to low-70s in the winter, and from the mid-80s to low-100s in the summer. The city is also prone to thunderstorms during the monsoon season from July to September.</p>
+
+    <h2>Education</h2>
+    <p>Scottsdale is home to a number of public and private schools, as well as several higher education institutions. The Scottsdale Unified School District serves the city, and includes a number of elementary, middle, and high schools. The city is also home to several private schools, including Phoenix Country Day School and Notre Dame Preparatory High School. Higher education institutions in the city include Scottsdale Community College and the Thunderbird School of Global Management.</p>
+
+    <h2>Media</h2>
+    <p>A few images of the beautiful Scottsdale area</p>
+    <!-- Image Carosel -->
+    <div class="carousel card" id="carousel1">
+        <img class="carousel-item" src="image1.jpg" alt="Image 1">
+        <img class="carousel-item" src="image2.jpg" alt="Image 2">
+        <img class="carousel-item" src="image3.jpg" alt="Image 3">
+        <a class="prev" id="carousel-button" onclick="plusSlides(-1, 'carousel1')">&#10094;</a>
+        <a class="next" id="carousel-button" onclick="plusSlides(1, 'carousel1')">&#10095;</a>
+    </div>
+
+    <div class="carousel second card" id="carousel2">
+        <img class="carousel-item" src="image4.jpg" alt="Image 1">
+        <img class="carousel-item" src="image5.jpg" alt="Image 2">
+        <img class="carousel-item" src="image6.jpeg" alt="Image 3">
+        <a class="prev" id="carousel-button" onclick="plusSlides(-1, 'carousel2')">&#10094;</a>
+        <a class="next" id="carousel-button" onclick="plusSlides(1, 'carousel2')">&#10095;</a>
+    </div>
+</body>
+
+<script>
+// JavaScript
+
+var slides1 = document.getElementById("carousel1");
+var slides2 = document.getElementById("carousel2");
+
+var slideIndex = 1;
+var slideIndex1 = 1;
+var slideIndex2 = 1;
+
+
+showSlides(slideIndex, slides1);
+showSlides(slideIndex, slides2);
+
+function plusSlides(n, carouselId) {
+  if (carouselId === "carousel1") {
+    showSlides(slideIndex1 += n, carouselId);
+  } else if (carouselId === "carousel2") {
+    showSlides(slideIndex2 += n, carouselId);
+  }
+}
+
+function currentSlide(n, carouselId) {
+  if (carouselId === "carousel1") {
+    showSlides(slideIndex1 = n, carouselId);
+  } else if (carouselId === "carousel2") {
+    showSlides(slideIndex2 = n, carouselId);
+  }
+}
+
+function showSlides(n, carouselId) {
+  var i;
+  var slides = document.getElementById(carouselId).getElementsByClassName("carousel-item");
+  if (n > slides.length-1) {
+    if (carouselId === "carousel1") {
+      slideIndex1 = 0;
+    } else if (carouselId === "carousel2") {
+      slideIndex2 = 0;
+    }
+  }
+  if (n < 1) {
+    if (carouselId === "carousel1") {
+      slideIndex1 = slides.length;
+    } else if (carouselId === "carousel2") {
+      slideIndex2 = slides.length;
+    }
+  }
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  slides[n-1].style.display = "block";
+}
+
+
+</script>
+</html>
+
+<style>
+    body {
+    margin-left: 220px;
+    background-color: #F5E5C5;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+p {
+    color: #2E2E2E;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    border: 1px solid #F5E5C5;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    padding: 10px 0;
+    margin-left: 200px;
+    background-color: #D3B18A;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Home button */
+.home-button {
+    color: #2E2E2E;
+    font-size: 20px;
+    margin-left: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 3px solid #2E2E2E;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.home-button:hover {
+    transition: 0.5s;
+    color: #F5E5C5;
+    background-color: #2E2E2E;
+}
+
+/* Navigation container */
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation buttons */
+.nav-container a {
+    transition: 0.5s;
+    color: #2E2E2E;
+    font-size: 20px;
+    margin-right: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 3px solid #2E2E2E;
+    border-radius: 10px;
+
+}
+
+/* Change color of navigation buttons on hover */
+.nav-container a:hover {
+    color: #F5E5C5;
+    background-color: #2E2E2E;
+    transition: 0.5s;
+}
+
+/* Change background color of navbar on scroll */
+.navbar.scrolled {
+    background-color: #2E2E2E;
+}
+
+
+.welcome {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.carousel {
+    display: inline-block;
+    position: relative;
+    width: 45%;
+    height: 200px;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.card {
+    width: 350px;
+    height: 250px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+nav {
+    background-color: #D3B18A;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    overflow-y: auto;
+    border-right: 5px solid #000;
+    z-index: 1;
+}
+
+nav h2 {
+    text-align: center;
+}
+
+nav ul {
+    text-align: left;
+    list-style-type: none;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 1px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+    background-color: #F5E5C5;
+}
+
+nav a:hover {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 1px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #D3B18A;
+}
+
+</style>
